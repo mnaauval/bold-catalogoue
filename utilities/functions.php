@@ -1,5 +1,6 @@
 <?php
-    $conn = mysqli_connect('localhost','root','','bold-shop');
+    $conn = mysqli_connect('localhost','root','','bold_shop');
+    // $conn = mysqli_connect('sql304.epizy.com','epiz_31396805','aoeiukls4195','epiz_31396805_bold_shop');
     if(!$conn){
         die("Connection failed: ".mysqli_connect_error());
     }
