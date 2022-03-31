@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if(!isset($_SESSION["login"])) {
+        header("Location: login.php");
+        exit;
+    }
     require('../utilities/functions.php');
     $num = 1;
     $all = query("SELECT * FROM products");
@@ -67,10 +72,13 @@
     <script src="https://kit.fontawesome.com/2af2ecb3a0.js" crossorigin="anonymous"></script>
     <title>Bold. - Dashboard</title>
 </head>
-<body>
+<body id="dashboard">
     <nav class="navbar navbar-expand-md navbar-light" style="background-color: #6777EF;">
         <div class="container">
             <a class="navbar-brand mx-auto text-white" href="../index.php">Bold<span>.</span> Dashboard</a>       
+            <button class="btn btn-warning" style="font-size: 1rem;">
+                <a href="../utilities/logout.php"><i class="fa-solid fa-right-from-bracket logout"></i></a>
+            </button>
         </div>
     </nav>
 

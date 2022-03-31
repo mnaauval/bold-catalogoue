@@ -110,6 +110,7 @@
     <link href="../css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/2af2ecb3a0.js" crossorigin="anonymous"></script>
+    <script src="../js/function.js"></script>
     <title>Bold. - Products</title>
 </head>
 <body>
@@ -132,7 +133,7 @@
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="dashboard.php">Dashboard</a>
+                        <a class="nav-link" href="login.php">Dashboard</a>
                     </li>
                 </ul>
             </div>        
@@ -144,14 +145,14 @@
             <div class="row">
                 <div class="col-md-3 mb-5">
                     <h5>CATEGORIES</h5>
-                    <form method="post" class="mt-3">
-                        <select class="form-select" aria-label="Default select example" required name="kategori">
+                    <form method="post" class="mt-3" id="category_form">
+                        <select class="form-select" aria-label="Default select example" required name="kategori" id="kategori">
                             <?php foreach($categories as $category) : ?>
                                 <?= "<option value=".$category['id_kategori'].">".$category['nama']."</option>" ?>
                             <?php endforeach; ?>
                         </select>
                         <div class="d-grid mt-3">
-                            <button class="btn btn-primary" type="submit" required name="submit">Filter</button>
+                            <button onclick="submitFormData()" class="btn btn-primary" type="submit" required name="submit" id="submit" value="submit">Filter</button>
                         </div>
                     </form>
                 </div>

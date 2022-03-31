@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if(!isset($_SESSION["login"])) {
+        header("Location: login.php");
+        exit;
+    }
     require('../utilities/functions.php');
     $num = 1;
     $categpries = query("SELECT * FROM kategori");

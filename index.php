@@ -76,7 +76,7 @@
                         <a class="nav-link" href="./pages/contact.php">Contact</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="./pages/dashboard.php">Dashboard</a>
+                        <a class="nav-link" href="./pages/login.php">Dashboard</a>
                     </li>
                 </ul>
             </div>        

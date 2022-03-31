@@ -49,3 +49,42 @@
         mysqli_query($conn, "DELETE FROM products WHERE id_product = $id");
         return mysqli_affected_rows($conn);
     }
+    function register($data) {
+        global $conn;
+        $email =strtolower($data["email"]);
+        $username = stripslashes(strtolower($data["username"]));
+        $password = mysqli_real_escape_string($conn, $data["password"]);
+        $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+        // $result = mysqli_query($conn, "SELECT username, email FROM user WHERE username = '$username' AND email = '$email'");
+        // var_dump($result);
+        $check_name = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
+        $check_email = mysqli_query($conn, "SELECT email FROM user WHERE email = '$email'");
+        if (mysqli_fetch_assoc($check_email)) {
+            echo "<script>
+                alert('Email sudah terdaftar!');
+                </script>";
+            return false;
+        }
+        if (mysqli_fetch_assoc($check_name)) {
+            echo "<script>
+                alert('Username sudah terdaftar!');
+                </script>";
+            return false;
+        }
+        if(strlen($password) < 7) {
+            echo "<script>
+                alert('Password minimal 8 karakter!');
+                </script>";
+            return false;
+        }
+        if($password !== $password2) {
+            echo "<script>
+                alert('Password password tidak sesuai!');
+                </script>";
+            return false;
+        }
+
+        $password= password_hash($password, PASSWORD_DEFAULT);
+        mysqli_query($conn, "INSERT INTO user VALUES('', '$username', '$email', '$password')");
+        return mysqli_affected_rows($conn);
+    }

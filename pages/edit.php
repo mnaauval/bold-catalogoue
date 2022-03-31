@@ -1,6 +1,14 @@
 <?php
+    session_start();
+    if(!isset($_SESSION["login"])) {
+        header("Location: login.php");
+        exit;
+    }
     require('../utilities/functions.php');
     $num = 1;
+    if(!isset($_GET['id'])) {
+        header("Location: dashboard.php");
+    }
     $id_product = $_GET['id'];
     $cur_product = query("SELECT * FROM products WHERE id_product = $id_product")[0];
     $categpries = query("SELECT * FROM kategori");

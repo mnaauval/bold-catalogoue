@@ -70,7 +70,7 @@
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="dashboard.php">Dashboard</a>
+                        <a class="nav-link" href="login.php">Dashboard</a>
                     </li>
                 </ul>
             </div>        
