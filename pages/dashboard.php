@@ -176,8 +176,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="d-flex align-items-center justify-content-between">
-                        <a href="add.php" class="text-white">
-                            <button class="btn btn-primary mb-3">
+                        <!-- <a href="add.php" class="text-white"> -->
+                        <a href="" class="text-white">
+                            <button class="btn btn-primary mb-3" disabled>
                                 <i class="fa-solid fa-plus"></i>
                                 Tambah Produk
                             </button>
@@ -208,13 +209,15 @@
                                     <td><img width="100" height="auto" src="<?= $product['gambar'] ?>" alt="<?= $product['nama_product'] ?>"></td>
                                     <td width="150">
                                         <div class="d-flex justify-content-evenly align-items-center">
-                                            <a href="edit.php?id=<?= $product['id_product'] ?>" class="text-white">
-                                                <button class="btn btn-warning">
+                                            <!-- <a href="edit.php?id=<?= $product['id_product'] ?>" class="text-white"> -->
+                                            <a href="" class="text-white">
+                                                <button class="btn btn-warning" disabled>
                                                     <i class="fa-solid fa-pencil"></i>
                                                 </button>
                                             </a>
-                                            <a href="../utilities/delete.php?id=<?= $product['id_product'] ?>" class="text-white" onclick="return confirm('Anda yakin ingin menghapus data?');">
-                                                <button class="btn btn-danger">
+                                            <!-- <a href="../utilities/delete.php?id=<?= $product['id_product'] ?>" class="text-white" onclick="return confirm('Anda yakin ingin menghapus data?');"> -->
+                                            <a href="" class="text-white">
+                                                <button class="btn btn-danger" disabled>
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
                                             </a>
